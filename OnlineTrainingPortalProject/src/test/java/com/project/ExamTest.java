@@ -39,7 +39,7 @@ public class ExamTest {
 	@Test
 	public void saveExamDetails()
 	{
-		Trainee trainee = new Trainee("TNE-JAV-4","John","Java","Kolkata","9875632452","AWS",2019,"Btech");
+		Trainee trainee = new Trainee("John","Java","Bangalore","7896541236","AWS",2019,"Btech","john123","john1234");
 		Exam exam = new Exam(96,"Core Java",trainee);
 		when(repository.save(exam)).thenReturn(exam);
 		assertEquals(exam, service.addExamDetails(exam));
