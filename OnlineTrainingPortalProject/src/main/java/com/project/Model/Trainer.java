@@ -1,13 +1,19 @@
 package com.project.Model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "TRAINER")
@@ -40,6 +46,11 @@ public class Trainer {
     @NotNull(message = "password should not be empty")
     @Size(min = 8, message = "password must have atleast 8 characters")
     private String password;
+    
+    
+    @OneToMany(mappedBy="trainer",  cascade=CascadeType.ALL)
+	@JsonManagedReference
+	private List<Trainee> trainee;
     
     
     public Trainer()

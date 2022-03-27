@@ -7,5 +7,5 @@ import com.project.Model.Trainee;
 
 @Repository
 public interface TraineeRepository extends JpaRepository<Trainee, String>{
-
+     Trainee findByNameAndPassword(String name,String password);
 }
