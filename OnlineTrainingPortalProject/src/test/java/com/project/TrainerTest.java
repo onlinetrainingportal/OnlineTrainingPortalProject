@@ -3,6 +3,10 @@ package com.project;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,4 +37,5 @@ public class TrainerTest {
         when(repo.findByNameAndPassword(userName,password)).thenReturn(trainer);
         assertEquals(trainer,service.login(userName, password));
     }
+     
 }
